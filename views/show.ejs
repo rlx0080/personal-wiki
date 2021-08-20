@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>content</title>
+    <link rel="stylesheet" href="/css/main.css">
+</head>
+
+<body>
+    <div class="header">
+        <ul class="desktop-menu">
+            <li class="menu-item"><a></a></li>
+            <li class="menu-item"><a href="/content">content</a></li>
+            <li class="menu-item"><a></a></li>
+        </ul>
+
+        <a href="/">
+            <div class="burger-container">
+
+                <div id="burger">
+                    <canvas id="canvas-menu" class="canvas-category"></canvas>
+                    <div class="bar topBar"></div>
+                </div>
+            </div>
+        </a>
+        <canvas id="canvas-header" class="canvas-category"></canvas>
+    </div>
+
+
+    <div class="body-container pt-5em">
+
+        <div class="article-hero">
+            <div class="article-title standard-layout-grid">
+                <div
+                    class="article-page--copy standard-layout-grid__cell standard-layout-grid__cell--span-6-desktop standard-layout-grid__cell--span-8-tablet standard-layout-grid__cell--span-4-mobile">
+                    <div class="article-page--header-title">
+                        <h1>
+                            <%= blog.title %>
+                        </h1>
+                    </div>
+                    <div class="article-page--header-title">
+                        <h2><%= blog.subtitle %></h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="article-body">
+            <canvas id="canvas-show" class="canvas-category"></canvas>
+            <div class="article-main standard-layout-grid">
+                <!-- <canvas id="canvas-show" class="canvas-category"></canvas> -->
+                <div
+                    class="h-100 article-page--copy standard-layout-grid__cell standard-layout-grid__cell--span-6-desktop standard-layout-grid__cell--span-8-tablet standard-layout-grid__cell--span-4-mobile">
+
+                    <%- blog.description %>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer sub-footer--container">
+        <canvas id="canvas-footer" class="canvas-category"></canvas>
+    </footer>
+
+    <script src="/js/noise.js"></script>
+    <script src="/js/show.js"></script>
+    <script src="/js/header.js"></script>
+    <script src="/js/footer.js"></script>
+    <script src="/js/menu.js"></script>
+</body>
+
+</html>

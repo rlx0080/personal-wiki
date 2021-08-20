@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>content</title>
+  <link rel="stylesheet" href="/css/main.css">
+</head>
+
+<body>
+  <div class="header">
+    <ul class="desktop-menu">
+      <li class="menu-item pc-view">
+        <div class="open_btn">Edit</div>
+        <div class="close_btn hide">Done</div>
+      </li>
+    </ul>
+
+    <a href="/">
+      <div class="burger-container">
+
+        <div id="burger">
+          <canvas id="canvas-menu" class="canvas-category"></canvas>
+          <div class="bar topBar"></div>
+        </div>
+      </div>
+    </a>
+    <canvas id="canvas-header" class="canvas-category"></canvas>
+  </div>
+
+  <canvas id="canvas" class="canvas-category"></canvas>
+
+  <footer class="footer sub-footer--container">
+    <a href="/new">
+      <ul class="footer-menu">
+        <li class="menu-item pc-view">new</li>
+      </ul>
+    </a>
+    <canvas id="canvas-footer" class="canvas-category"></canvas>
+  </footer>
+
+  <div class="wiki-grid body-container">
+    <ul class="wiki-layout-grid">
+      <% blogs.forEach(blog=>{ %>
+        <li class="grid-item po-rel">
+          <a href="blogs/<%=blog.slug %>" class="">
+            <div class="content-item">
+              <div class="content-headline word-keep-all">
+                <%= blog.title %>
+              </div>
+
+              <div class="content-subheadline">
+                #<%= blog.category %>
+              </div>
+            </div>
+          </a>
+          <a href="blogs/edit/<%= blog.id %>" class="edit-btn hide">
+            edit
+          </a>
+        </li>
+
+        <% }) %>
+    </ul>
+  </div>
+
+  <script src="/js/noise.js"></script>
+  <script src="/js/category.js"></script>
+  <script src="/js/header.js"></script>
+  <script src="/js/footer.js"></script>
+  <script src="/js/menu.js"></script>
+  <script src="/js/editmode.js"></script>
+  <script src="/js/mouseover.js"></script>
+</body>
+
+</html>
